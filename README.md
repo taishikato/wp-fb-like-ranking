@@ -16,13 +16,13 @@ Facebookのいいね数に基づいたブログ内の記事のランキングを
 
 関数には２つの引数を与えることが出来ます。
 
-<code>get_like_ranking (int $post_number = 5, bool $post_count = true)</code>
+<code>get_like_ranking (int $post_number = 5, bool $post_count = true , array $thumbnail = null)</code>
 
 <strong>例)</strong>
 
-この場合、10つの記事が表示されます。2つ目の引数は"false"なのでそれぞれの記事のいいね数は表示されません。
+この場合、10つの記事が表示されます。2つ目の引数は"false"なのでそれぞれの記事のいいね数は表示されません。15px × 15pxのサムネイルが表示されます。
 
-<code><?php if (function_exists('get_like_ranking')) get_like_ranking (10, false); ?></code>
+<code><?php if (function_exists('get_like_ranking')) get_like_ranking (10, false, array(15, 15); ?></code>
 
 
 
