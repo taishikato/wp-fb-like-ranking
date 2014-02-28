@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.wp-fb-like-ranking li {
+	clear: both;
+}
+
+.wp-fb-like-ranking-thumb {
+	float: left;
+	margin-right: 5px;
+}

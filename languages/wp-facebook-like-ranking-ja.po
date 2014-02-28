@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-facebook-like-ranking\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2013-12-28 15:02+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Taishi <taishi.k0903@gmail.com>\n"
+"Language-Team: Taishi <taishi.k0903@gmail.com>\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Generator: Poedit 1.6.2\n"
+"POT-Creation-Date: 2013-12-13 23:59+0900\n"
+"Language: ja_JP\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: wp-fb-like-ranking.php:167
+msgid "No post liked."
+msgstr "いいねを押されている記事はまだありません"
+
+#: setting.html.php:7
+msgid "Create a ranking"
+msgstr "ランキング生成"
+
+#: setting.html.php:9
+msgid "You need to do this just once."
+msgstr ""
+"このプラグインを有効化した後に一度だけこの作業が必要です。<br />一度この作業"
+"をしてしまえば、プラグインを無効にしない限り、二度とこの作業をする必要はあり"
+"ません。<br />記事数によっては1分ほどかかる場合もあります。"
+
+#: setting.html.php:11
+msgid "Create or Recreate"
+msgstr "生成または再生成"
+
+#: setting.html.php:19
+msgid "Frequency of updating"
+msgstr "更新頻度"
+
+#: setting.html.php:22
+msgid "hourly"
+msgstr "1時間おき"
+
+#: setting.html.php:23
+msgid "twicedaily"
+msgstr "12時間おき"
+
+#: setting.html.php:24
+msgid "daily"
+msgstr "24時間おき"
+
+#: setting.html.php:29
+msgid "The number of posts when updating"
+msgstr "更新時にチェックする記事数"
+
+#: setting.html.php:32
+msgid "All"
+msgstr "全ての記事"
+
+#: setting.html.php:33
+msgid "10 latest posts"
+msgstr "最新の10記事"
+
+#: setting.html.php:34
+msgid "20 latest posts"
+msgstr "最新の20記事"
+
+#: setting.html.php:35
+msgid "30 latest posts"
+msgstr "最新の30記事"
+
+#: setting.html.php:36
+msgid "40 latest posts"
+msgstr "最新の40記事"
+
+#: setting.html.php:37
+msgid "50 latest posts"
+msgstr "最新の50記事"
+
+#: setting.html.php:42
+msgid "Save"
+msgstr "設定を保存"
+
+#: widget.php:32
+msgid "Title:"
+msgstr "タイトル："
+
+#: widget.php:38
+msgid "Setting"
+msgstr "設定"
+
+#: widget.php:41
+msgid "Show Up To:"
+msgstr "表示する記事数："
+
+#: widget.php:46
+msgid "Show The Like Count:"
+msgstr "いいね数を表示："
+
+#: widget.php:51
+msgid "Shorten Title To:"
+msgstr "タイトルを短縮："
+
+#: widget.php:56
+msgid "Category ID:"
+msgstr "カテゴリーID："
+
+#: widget.php:61
+msgid "Thumbnail Setting"
+msgstr "サムネイルの設定"
+
+#: widget.php:63
+msgid "Width:"
+msgstr "幅："
+
+#: widget.php:68
+msgid "Height:"
+msgstr "高さ："
