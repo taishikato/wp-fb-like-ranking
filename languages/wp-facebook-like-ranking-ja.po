@@ -14,7 +14,7 @@ msgstr ""
 "Language: ja_JP\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: wp-fb-like-ranking.php:167
+#: wp-fb-like-ranking.php:189
 msgid "No post liked."
 msgstr "いいねを押されている記事はまだありません"
 

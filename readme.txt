@@ -3,8 +3,8 @@ Contributors: MankinJp
 Donate link: 
 Tags: plugin, facebook, like, ranking, popular
 Requires at least: 3.0
-Tested up to: 3.8
-Stable tag: 1.3.0
+Tested up to: 4.0
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,8 +13,6 @@ With this plugin, you can use a your posts' ranking rated by the number of Faceb
 == Description ==
 
 = Features =
-
-* **A HAPPY NEW YEAR!!**
 
 * **Making a ranking rated by the number of Facebook like**. You can make and use a ranking rated by the number of Facebook like width this plugin. It's good for visitors.
 
@@ -78,6 +76,8 @@ It shows 10 posts of a category which has id 1.
 
 
 == Changelog ==
+= 1.4.0 = 
+* fix bug
 = 1.3.0 =
 * Implementing Widget
 = 1.2.0 =
@@ -87,7 +87,7 @@ It shows 10 posts of a category which has id 1.
 = 1.121 =
 * Tiny updates
 = 1.12 =
-* Adding title properties to a elements.
+* Adding title properties to elements.
 = 1.11 =
 * Just add a title property
 = 1.1 = 

@@ -1,20 +1,19 @@
 <?php
 /**
  * Widget
- *
  */
 add_action(
-    'widgets_init',
-    create_function('', 'return register_widget("WpFblikeRankingWidget");')
+	'widgets_init',
+	create_function('', 'return register_widget("WpFblikeRankingWidget");')
 );
+
 class WpFblikeRankingWidget extends WP_Widget  {
 
-
-  function __construct() {
-    $widget_ops = array('description' => __('With this plugin, you can use a your posts&#8217; ranking rated by the number of Facebook like.', 'wp-facebook-like-ranking'));
-    // parent::__construct('pages', __('Pages'), $widget_ops);
-    $this->WP_Widget('wp-facebook-like-ranking', __('WordPress Facebook Like Ranking', 'wp-facebook-like-ranking'), $widget_ops);
-  }
+	function __construct() {
+		$widget_ops = array('description' => __('With this plugin, you can use a your posts&#8217; ranking rated by the number of Facebook like.', 'wp-facebook-like-ranking'));
+		// parent::__construct('pages', __('Pages'), $widget_ops);
+		$this->WP_Widget('wp-facebook-like-ranking', __('WordPress Facebook Like Ranking', 'wp-facebook-like-ranking'), $widget_ops);
+	}
 
   public function form($par) {
     $title = (isset($par['title']) && $par['title']) ? $par['title'] : '';
@@ -25,6 +24,7 @@ class WpFblikeRankingWidget extends WP_Widget  {
     $thumb_width = (isset($par['thumb_width']) && $par['thumb_width']) ? mb_convert_kana($par['thumb_width'], 'n') : '';
     $thumb_height = (isset($par['thumb_height']) && $par['thumb_height']) ? mb_convert_kana($par['thumb_height'], 'n') : '';
     $cat_id = (isset($par['cat_id']) && $par['cat_id']) ? mb_convert_kana($par['cat_id'], 'n') : '';
+    $custom_post_name = (isset($par['custom_post_name']) && $par['custom_post_name']) ? mb_convert_kana($par['custom_post_name'], 'n') : '';
 
     ?>
 
@@ -69,6 +69,11 @@ class WpFblikeRankingWidget extends WP_Widget  {
       <input id="<?php echo $this->get_field_id('thumb_height'); ?>" name="<?php echo $this->get_field_name('thumb_height'); ?>" value="<?php echo trim(htmlentities($thumb_height, ENT_QUOTES, 'UTF-8')); ?>" style="width: 50px;" >
     </p>
 
+    <p>
+      <p><?php _e('Custom Post Type Name:', 'wp-facebook-like-ranking'); ?></p>
+      <input id="<?php echo $this->get_field_id('custom_post_name'); ?>" name="<?php echo $this->get_field_name('custom_post_name'); ?>" value="<?php echo trim(htmlentities($custom_post_name, ENT_QUOTES, 'UTF-8')); ?>" >
+    </p>
+
     </fieldset>
 
     <?php
@@ -86,10 +91,10 @@ class WpFblikeRankingWidget extends WP_Widget  {
       $thumb_height = (isset($par['thumb_height']) && $par['thumb_height']) ? mb_convert_kana($par['thumb_height'], 'n') : '';
       $shorten_words = (isset($par['shorten']) && $par['shorten']) ? mb_convert_kana($par['shorten'], 'n') : null;
       $cat_id = (isset($par['cat_id'])) ? mb_convert_kana($par['cat_id'], 'n') : null;
-
       $thumb_data = (empty($thumb_width) AND empty($thumb_height)) ? null : array($thumb_width, $thumb_height);
+      $custom_post_name = (isset($par['custom_post_name'])) ? mb_convert_kana($par['custom_post_name'], 'n') : null;
 
-      get_like_ranking ($show_up_to, $show_the_like_count, $thumb_data, $cat_id, $shorten_words);
+      get_like_ranking ($show_up_to, $show_the_like_count, $thumb_data, $cat_id, $shorten_words, $custom_post_name);
     }
     echo $args['after_widget'];
   }
