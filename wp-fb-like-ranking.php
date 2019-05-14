@@ -70,7 +70,6 @@ class WpLikeRanking {
       // get the number of like
       $likeNumber = getLikeCount($permalink);
       $likeNumber = (int) $likeNumber;
-
 	    $preLikeNumber = get_post_meta($postId, 'wp_fb_like_count', true);
 
 	    if( $preLikeNumber != $likeNumber ) {
@@ -117,7 +116,8 @@ function set_likecount_meta () {
 
 function getLikeCount($permalink) {
   $url = 'https://graph.facebook.com/v3.1/?id=' . urlencode($permalink)
-      . '&fields=engagement&access_token=113096575454209|TY7QcA0pi7y2z8psbmpPc6fKrtk';
+      . '&fields=engagement&access_token='
+      . get_option('wp_fb_like_ranking_fbAppToken');
   $json = file_get_contents($url);
   $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
 	$arr = json_decode($json, true);
@@ -135,16 +135,20 @@ add_action('wp_print_styles','styleCss');
 
 // 管理画面設定
 function wp_fb_like_ranking_edit_setting () {
+  if (isset($_POST['wp_fb_like_ranking_fbAppToken'])) {
+    update_option('wp_fb_like_ranking_fbAppToken', $_POST['wp_fb_like_ranking_fbAppToken']);
+  }
   if (isset($_POST['create'])) {
     // Set default value
     set_likecount_meta ();
   }
   if (isset($_POST['wp_fb_like_ranking_frequency'])) {
-    update_option ('wp_fb_like_ranking_frequency', $_POST['wp_fb_like_ranking_frequency']);
+    update_option('wp_fb_like_ranking_frequency', $_POST['wp_fb_like_ranking_frequency']);
   }
   if (isset($_POST['wp_fb_like_ranking_updatePostNumber'])) {
-    update_option ('wp_fb_like_ranking_updatePostNumber', $_POST['wp_fb_like_ranking_updatePostNumber']);
+    update_option('wp_fb_like_ranking_updatePostNumber', $_POST['wp_fb_like_ranking_updatePostNumber']);
   }
+  $WpFbLikeRankingFbAppToken = get_option('wp_fb_like_ranking_fbAppToken');
   $WpFbLikeRankingFrequency = get_option ('wp_fb_like_ranking_frequency');
   $WpFbLikeRankingUpdatePostNumber = get_option ('wp_fb_like_ranking_updatePostNumber');
   include 'setting.html.php';
