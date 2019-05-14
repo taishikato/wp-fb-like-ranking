@@ -68,11 +68,8 @@ class WpLikeRanking {
       // get the permalink
       $permalink = get_permalink($postId);
       // get the number of like
-      $xml = 'http://api.facebook.com/method/fql.query?query=select%20total_count%20from%20link_stat%20where%20url=%22'.$permalink.'%22';
-	    $result = file_get_contents ($xml);
-	    $result = simplexml_load_string ($result);
-	    $likeNumber = $result->link_stat->total_count;
-	    $likeNumber = (int) $likeNumber;
+      $likeNumber = getLikeCount($permalink);
+      $likeNumber = (int) $likeNumber;
 
 	    $preLikeNumber = get_post_meta($postId, 'wp_fb_like_count', true);
 
@@ -103,11 +100,8 @@ function set_likecount_meta () {
     $postId = $post->ID;
     // get the permalink
     $permalink = get_permalink($postId);
-    // FBからAPIで取得
-    $xml = 'http://api.facebook.com/method/fql.query?query=select%20total_count%20from%20link_stat%20where%20url=%22'.$permalink.'%22';
-    $result = file_get_contents ($xml);
-    $result = simplexml_load_string ($result);
-    $likeNumber = $result->link_stat->total_count;
+    // Get like count via FB API
+    $likeNumber = getLikeCount($permalink);
     $likeNumber = (int) $likeNumber;
     $meta_values = get_post_meta($postId, 'wp_fb_like_count', true);
     if($meta_values != '') {
@@ -119,6 +113,17 @@ function set_likecount_meta () {
       add_post_meta($postId, 'wp_fb_like_count', $likeNumber, true);
     }
   }
+}
+
+function getLikeCount($permalink) {
+  $url = 'https://graph.facebook.com/v3.1/?id=' . urlencode($permalink)
+      . '&fields=engagement&access_token=113096575454209|TY7QcA0pi7y2z8psbmpPc6fKrtk';
+  $json = file_get_contents($url);
+  $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+	$arr = json_decode($json, true);
+  $likeNumber = $arr['engagement']['reaction_count'];
+  $likeNumber = (int) $likeNumber;
+  return $likeNumber;
 }
 
 function styleCss () {
