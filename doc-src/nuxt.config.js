@@ -3,6 +3,10 @@ import pkg from './package'
 export default {
   mode: 'universal',
 
+  router: {
+    base: '/wp-fb-like-ranking/'
+  },
+
   /*
    ** Headers of the page
    */
