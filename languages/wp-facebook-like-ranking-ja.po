@@ -14,70 +14,78 @@ msgstr ""
 "Language: ja_JP\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: wp-fb-like-ranking.php:189
+#: wp-fb-like-ranking.php:249
 msgid "No post liked."
 msgstr "いいねを押されている記事はまだありません"
 
-#: setting.html.php:7
+#: setting.html.php:9
+msgid "Set Facebook App token"
+msgstr "Facebook APPのTokenを設定"
+
+#: setting.html.php:24
+msgid "Save"
+msgstr "保存"
+
+#: setting.html.php:29
 msgid "Create a ranking"
 msgstr "ランキング生成"
 
-#: setting.html.php:9
+#: setting.html.php:31
 msgid "You need to do this just once."
 msgstr ""
 "このプラグインを有効化した後に一度だけこの作業が必要です。<br />一度この作業"
 "をしてしまえば、プラグインを無効にしない限り、二度とこの作業をする必要はあり"
-"ません。<br />記事数によっては1分ほどかかる場合もあります。"
+"ません。<br />記事数によっては数分かかる場合もあります。"
 
-#: setting.html.php:11
+#: setting.html.php:33
 msgid "Create or Recreate"
 msgstr "生成または再生成"
 
-#: setting.html.php:19
+#: setting.html.php:41
 msgid "Frequency of updating"
 msgstr "更新頻度"
 
-#: setting.html.php:22
+#: setting.html.php:49
 msgid "hourly"
 msgstr "1時間おき"
 
-#: setting.html.php:23
+#: setting.html.php:54
 msgid "twicedaily"
 msgstr "12時間おき"
 
-#: setting.html.php:24
+#: setting.html.php:60
 msgid "daily"
 msgstr "24時間おき"
 
-#: setting.html.php:29
+#: setting.html.php:65
 msgid "The number of posts when updating"
 msgstr "更新時にチェックする記事数"
 
-#: setting.html.php:32
+#: setting.html.php:71
 msgid "All"
 msgstr "全ての記事"
 
-#: setting.html.php:33
+#: setting.html.php:75
 msgid "10 latest posts"
 msgstr "最新の10記事"
 
-#: setting.html.php:34
+#: setting.html.php:79
 msgid "20 latest posts"
 msgstr "最新の20記事"
 
-#: setting.html.php:35
+#: setting.html.php:83
 msgid "30 latest posts"
 msgstr "最新の30記事"
 
-#: setting.html.php:36
+#: setting.html.php:87
 msgid "40 latest posts"
 msgstr "最新の40記事"
 
-#: setting.html.php:37
+#: setting.html.php:91
 msgid "50 latest posts"
 msgstr "最新の50記事"
 
-#: setting.html.php:42
+#: setting.html.php:96
 msgid "Save"
 msgstr "設定を保存"
 

@@ -1,34 +1,49 @@
-<h2>WordPress Facebook Like Ranking</h2>
+# WordPress Facebook Like Ranking 😸😇😈
 
-Facebookのいいね数に基づいたブログ内の記事のランキングを表示するWordPressプラグインです。
+With this plugin, you can create a your posts' ranking sorted by the number of Facebook like.
 
-使用例）btrax（ビートラックス）という企業のサイドバーです。
-<a href="http://blog.btrax.com/jp/2014/10/08/post-jpn7-tokyo/" target="_blank">freshtrax | btrax スタッフブログ</a>
+Ex）  
+![screenshot-1](https://user-images.githubusercontent.com/980588/57820677-9dc52280-7742-11e9-991d-e488a601f83d.png)
 
-<h2>使い方</h2>
+## How to use
 
-ランキングを表示したい場所に以下のコードを書きます。デフォルトでは5つの記事が表示されます。
+### Create FB App
+Here  
+https://developers.facebook.com/
 
+### Get FB App Token
+
+You can get that here  
+https://developers.facebook.com/tools/explorer/
+
+### Set your FB App Token
+You can see the setting of this plugin when you install it. Click it.  
+<img width="318" alt="wp-fb-like-ranking-setting-image" src="https://user-images.githubusercontent.com/980588/57820073-078ffd00-7740-11e9-818b-6f555e3a0461.png">
+
+You will see the setting page like below.  
+Put your token in the form and hit the save button.  
+<img width="514" alt="WPFBSETTINGPAGE-2" src="https://user-images.githubusercontent.com/980588/57820398-791c7b00-7741-11e9-9be7-7733f605626e.png">
+
+### Generate your ranking
+All you need to do is just hit the "Create or Recreate" button.  
+<img width="514" alt="WPFBSETTINGPAGE-2" src="https://user-images.githubusercontent.com/980588/57820556-298a7f00-7742-11e9-88d0-ba52a99d93e4.png">
+
+### 🛠 Put code (or you can use wdget)
+Put the code below whereever you would like to make the raking show up.
+```php
+<?php if (function_exists('get_like_ranking')) get_like_ranking(); ?>
 ```
-<?php if (function_exists('get_like_ranking')) get_like_ranking (); ?>
+
+There are 6 parameters for this method.
+```php
+get_like_ranking(int $post_number = 5, bool $post_count = true , array $thumbnail = null, $category_id = null, $shorten_words = null, $custom_post_name = null)
 ```
 
-
-
-関数には最大6つの引数を与えることが出来ます。
-
+Ex)  
+In this case, There should be 10 articles which are "Movie" custom post type on your raking.  
+Second argument is `false`, thus like count of each artile does **not** show up.  
+Thumbnails are **15px** x **15px**.  
+If the title og the article is over 25 characters, it's gonne be compressed to 25 characters.
+```php
+<?php if (function_exists('get_like_ranking')) get_like_ranking(10, false, array(15, 15), null, 25, "movie"); ?>
 ```
-get_like_ranking (int $post_number = 5, bool $post_count = true , array $thumbnail = null, $category_id = null, $shorten_words = null, $custom_post_name = null)
-```
-
-<strong>例)</strong>
-
-この場合、Movieというカスタム投稿タイプ名の10つの記事が表示されます。2つ目の引数は"false"なのでそれぞれの記事のいいね数は表示されません。15px × 15pxのサムネイルが表示されます。記事タイトルが25文字以上の場合、25文字に短縮されます。
-
-```
-<?php if (function_exists('get_like_ranking')) get_like_ranking (10, false, array(15, 15), null, 25, "movie"); ?>
-```
-
-
-
-このプラグインをインストールすると、設定の項目に「WP Facebook Like Ranking」が追加されるので、そこからランキングの更新頻度等、細かい設定を行ってください。
