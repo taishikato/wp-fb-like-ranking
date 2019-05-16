@@ -5,7 +5,7 @@ Tags: plugin, facebook, like, ranking, popular
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 5.2
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,48 +25,8 @@ With this plugin, you can use a your posts' ranking rated by the number of Faceb
 
 == Installation ==
 
-## How to use
-
-### Create FB App
-Here  
-https://developers.facebook.com/
-
-### Get FB App Token
-
-You can get that here  
-https://developers.facebook.com/tools/explorer/
-
-### Set your FB App Token
-You can see the setting of this plugin when you install it. Click it.  
-<img width="318" alt="wp-fb-like-ranking-setting-image" src="https://user-images.githubusercontent.com/980588/57820073-078ffd00-7740-11e9-818b-6f555e3a0461.png">
-
-You will see the setting page like below.  
-Put your token in the form and hit the save button.  
-<img width="514" alt="WPFBSETTINGPAGE-2" src="https://user-images.githubusercontent.com/980588/57820398-791c7b00-7741-11e9-9be7-7733f605626e.png">
-
-### Generate your ranking
-All you need to do is just hit the "Create or Recreate" button.  
-<img width="514" alt="WPFBSETTINGPAGE-2" src="https://user-images.githubusercontent.com/980588/57820556-298a7f00-7742-11e9-88d0-ba52a99d93e4.png">
-
-### 🛠 Put code (or you can use wdget)
-Put the code below whereever you would like to make the raking show up.
-```php
-<?php if (function_exists('get_like_ranking')) get_like_ranking(); ?>
-```
-
-There are 6 parameters for this method.
-```php
-get_like_ranking(int $post_number = 5, bool $post_count = true , array $thumbnail = null, $category_id = null, $shorten_words = null, $custom_post_name = null)
-```
-
-Ex)  
-In this case, There should be 10 articles which are "Movie" custom post type on your raking.  
-Second argument is `false`, thus like count of each artile does **not** show up.  
-Thumbnails are **15px** x **15px**.  
-If the title og the article is over 25 characters, it's gonne be compressed to 25 characters.
-```php
-<?php if (function_exists('get_like_ranking')) get_like_ranking(10, false, array(15, 15), null, 25, "movie"); ?>
-```
+Check out here
+[wp-fb-like-ranking/README.md at master · taishikato/wp-fb-like-ranking](https://github.com/taishikato/wp-fb-like-ranking/blob/master/README.md)
 
 ・more about a function
 
@@ -97,9 +57,11 @@ It shows 10 posts of a category which has id 1.
 
 
 == Changelog ==
-= 2.0.0 = 
+= 2.0.1 =
+* bug fix
+= 2.0.0 =
 * change the Facebook API
-= 1.4.0 = 
+= 1.4.0 =
 * fix bug
 = 1.3.0 =
 * Implementing Widget
@@ -113,10 +75,10 @@ It shows 10 posts of a category which has id 1.
 * Adding title properties to elements.
 = 1.11 =
 * Just add a title property
-= 1.1 = 
+= 1.1 =
 * Add a category filter.
 
-= 1.05 = 
+= 1.05 =
 * Able to recreate the ranking
 
 = 1.04 =
