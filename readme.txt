@@ -1,10 +1,11 @@
 === WordPress Facebook Like Ranking ===
-Contributors: MankinJp
-Donate link: 
+Contributors: mankinjp
+Donate link: https://www.patreon.com/taishikato
 Tags: plugin, facebook, like, ranking, popular
 Requires at least: 3.0
-Tested up to: 4.0
-Stable tag: 1.4.0
+Requires PHP: 5.6
+Tested up to: 5.2
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,28 +25,48 @@ With this plugin, you can use a your posts' ranking rated by the number of Faceb
 
 == Installation ==
 
-1. Download the plugin and extract its contents.
-2. Upload `wp-facebook-like-ranking` to the `/wp-content/plugins/` directory.
-3. Activate the plugin through the 'Plugins' menu in WordPress.
-4. Create a ranking by pushing a create button through the 'Settings->WP Facebook Like Ranking' menu in WordPres.
-5. Configure items.
-6. 2 ways<br />
-・As a widget:Go to the widget page and put on this widget.<br />
-・With a function:Place `<?php if (function_exists('get_like_ranking')) get_like_ranking (); ?>` in your templates.
+## How to use
 
-That's it!
+### Create FB App
+Here  
+https://developers.facebook.com/
 
+### Get FB App Token
 
-1. プラグインをダウンロード、解凍します。
-2. `/wp-content/plugins/`ディレクトリにプラグインをアップロードします。
-3. プラグインを有効化します。
-4. 'Settings->WP Facebook Like Ranking'でCreateボタンを押して最初のランキングを生成します。
-5. 'Settings->WP Facebook Like Ranking'で細かい設定を行います。
-6. 最後は、2通りのやり方があります。<br />
-ウィジェットとして使う場合：ウィジェットページで設定できます。<br />
-関数を直接書く場合：`<?php if (function_exists('get_like_ranking')) get_like_ranking (); ?>`を、ランキングを出したいところにコピペします。
+You can get that here  
+https://developers.facebook.com/tools/explorer/
 
-完了！
+### Set your FB App Token
+You can see the setting of this plugin when you install it. Click it.  
+<img width="318" alt="wp-fb-like-ranking-setting-image" src="https://user-images.githubusercontent.com/980588/57820073-078ffd00-7740-11e9-818b-6f555e3a0461.png">
+
+You will see the setting page like below.  
+Put your token in the form and hit the save button.  
+<img width="514" alt="WPFBSETTINGPAGE-2" src="https://user-images.githubusercontent.com/980588/57820398-791c7b00-7741-11e9-9be7-7733f605626e.png">
+
+### Generate your ranking
+All you need to do is just hit the "Create or Recreate" button.  
+<img width="514" alt="WPFBSETTINGPAGE-2" src="https://user-images.githubusercontent.com/980588/57820556-298a7f00-7742-11e9-88d0-ba52a99d93e4.png">
+
+### 🛠 Put code (or you can use wdget)
+Put the code below whereever you would like to make the raking show up.
+```php
+<?php if (function_exists('get_like_ranking')) get_like_ranking(); ?>
+```
+
+There are 6 parameters for this method.
+```php
+get_like_ranking(int $post_number = 5, bool $post_count = true , array $thumbnail = null, $category_id = null, $shorten_words = null, $custom_post_name = null)
+```
+
+Ex)  
+In this case, There should be 10 articles which are "Movie" custom post type on your raking.  
+Second argument is `false`, thus like count of each artile does **not** show up.  
+Thumbnails are **15px** x **15px**.  
+If the title og the article is over 25 characters, it's gonne be compressed to 25 characters.
+```php
+<?php if (function_exists('get_like_ranking')) get_like_ranking(10, false, array(15, 15), null, 25, "movie"); ?>
+```
 
 ・more about a function
 
@@ -76,6 +97,8 @@ It shows 10 posts of a category which has id 1.
 
 
 == Changelog ==
+= 2.0.0 = 
+* change the Facebook API
 = 1.4.0 = 
 * fix bug
 = 1.3.0 =
