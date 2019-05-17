@@ -15,7 +15,48 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          "With this plugin, you can create a your posts' ranking sorted by the number of Facebook like."
+      },
+      {
+        hid: 'title',
+        name: 'title',
+        content: 'WordPress Facebook Like Ranking'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'wordpress,facebook,sort,like,reaction,ranking'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'WordPress Facebook Like Ranking'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          "With this plugin, you can create a your posts' ranking sorted by the number of Facebook like."
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'WordPress Facebook Like Ranking'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://taishikato.github.io/wp-fb-like-ranking/'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://taishikato.github.io/wp-fb-like-ranking/ogimage.png'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
