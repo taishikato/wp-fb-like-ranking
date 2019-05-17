@@ -17,7 +17,7 @@
     <div class="content">
       <h2 class="title is-2">
         ⚡️ Total Download:
-        <div class="totalCount">4536</div>
+        <div class="totalCount">{{ totalDownload }}</div>
       </h2>
       <h2 class="title is-2">
         🤝 Usage
@@ -25,13 +25,24 @@
       <div v-html="$md.render(usage)"></div>
     </div>
     <footer class="footer has-text-centered">
-      <a
-        class="title footer-link"
-        href="https://wordpress.org/plugins/wp-facebook-like-ranking/"
-        target="_blank"
-      >
-        Check on wordpress.org
-      </a>
+      <p>
+        <a
+          class="title footer-link"
+          href="https://wordpress.org/plugins/wp-facebook-like-ranking/"
+          target="_blank"
+        >
+          Check on wordpress.org
+        </a>
+      </p>
+      <p>
+        <a
+          class="title footer-link"
+          href="https://github.com/taishikato/wp-fb-like-ranking"
+          target="_blank"
+        >
+          Check on github.com
+        </a>
+      </p>
     </footer>
   </section>
 </template>
@@ -41,24 +52,18 @@ import twemoji from 'twemoji'
 
 export default {
   name: 'HomePage',
-  data() {
-    return {
-      // totalDownload: '',
-      // usage: ''
-    }
-  },
   async asyncData({ $axios }) {
-    // const result = await this.$axios('http://wptally.com/api/mankinjp', {
-    //   params: {
-    //     timeout: 3
-    //   }
-    // })
-    // this.totalDownload = result.data
+    const result = await $axios('http://wptally.com/api/mankinjp', {
+      params: {
+        timeout: 3
+      }
+    })
+    totalDownload = result.data
     const { data } = await $axios.get(
       'https://raw.githubusercontent.com/taishikato/wp-fb-like-ranking/master/README.md'
     )
     const usage = data
-    return { usage }
+    return { usage, totalDownload }
   },
   mounted() {
     twemoji.parse(document.body)
