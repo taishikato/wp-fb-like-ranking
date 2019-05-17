@@ -1,0 +1,9 @@
+@charset "utf-8";
+@import "~bulma/sass/utilities/_all";
+
+$body-family: 'Baloo Bhai', cursive;
+$body-background-color: #fff;
+$footer-background-color: #fff;
+
+// Import Bulma styles
+@import "~bulma";
