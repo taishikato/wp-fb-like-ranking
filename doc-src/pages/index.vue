@@ -30,7 +30,7 @@
         href="https://wordpress.org/plugins/wp-facebook-like-ranking/"
         target="_blank"
       >
-        On wordpress.org
+        Check on wordpress.org
       </a>
     </footer>
   </section>
