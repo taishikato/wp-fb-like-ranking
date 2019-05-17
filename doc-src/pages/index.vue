@@ -44,20 +44,21 @@ export default {
   data() {
     return {
       // totalDownload: '',
-      usage: ''
+      // usage: ''
     }
   },
-  async created() {
+  async asyncData({ $axios }) {
     // const result = await this.$axios('http://wptally.com/api/mankinjp', {
     //   params: {
     //     timeout: 3
     //   }
     // })
     // this.totalDownload = result.data
-    const { data } = await this.$axios.get(
+    const { data } = await $axios.get(
       'https://raw.githubusercontent.com/taishikato/wp-fb-like-ranking/master/README.md'
     )
-    this.usage = twemoji.parse(data)
+    const usage = data
+    return { usage }
   },
   mounted() {
     twemoji.parse(document.body)
