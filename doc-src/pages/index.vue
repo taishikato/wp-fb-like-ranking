@@ -58,7 +58,7 @@ export default {
         timeout: 3
       }
     })
-    totalDownload = result.data
+    const totalDownload = result.data
     const { data } = await $axios.get(
       'https://raw.githubusercontent.com/taishikato/wp-fb-like-ranking/master/README.md'
     )
