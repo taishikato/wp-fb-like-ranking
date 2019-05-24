@@ -20,6 +20,7 @@
     "cross-env": "^5.2.0",
     "nuxt": "^2.7.1",
     "nuxt-buefy": "^0.3.2",
+    "semver": "^6.1.0",
     "twemoji": "^12.0.1"
   },
   "devDependencies": {
