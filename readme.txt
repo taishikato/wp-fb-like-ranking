@@ -1,6 +1,6 @@
 === WordPress Facebook Like Ranking ===
 Contributors: mankinjp
-Donate link: https://www.patreon.com/taishikato
+Donate link: https://www.paypal.me/taishikato0903/2usd
 Tags: plugin, facebook, like, ranking, popular
 Requires at least: 3.0
 Requires PHP: 5.6
