@@ -15,10 +15,13 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/markdownit": "^1.2.4",
+    "axios": "^0.18.1",
     "cross-env": "^5.2.0",
     "nuxt": "^2.7.1",
     "nuxt-buefy": "^0.3.2",
+    "semver": "^6.1.0",
     "twemoji": "^12.0.1"
   },
   "devDependencies": {

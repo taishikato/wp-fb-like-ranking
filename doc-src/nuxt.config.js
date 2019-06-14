@@ -90,7 +90,10 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-27648393-21'
+    }]
   ],
   markdownit: {
     injected: true, // $mdを利用してmarkdownをhtmlにレンダリングする
