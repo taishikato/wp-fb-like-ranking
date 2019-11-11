@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wp-facebook-like-ranking\n"
+"Project-Id-Version: wp-social-like-ranking\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2013-12-28 15:02+0900\n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Language: ja_JP\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: wp-fb-like-ranking.php:249
+#: wp-social-like-ranking.php:249
 msgid "No post liked."
 msgstr "いいねを押されている記事はまだありません"
 
